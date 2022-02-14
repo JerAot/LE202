@@ -42,4 +42,11 @@ Temp Range (°C) :	-40 to 125
 port input/output : 169 I/O
 Operating Voltage Range: 3.14 V to 3.47 V
 
-###### 5.
+###### 5.LoFive RISC-V SoC Evaluation Kit
+ราคา : 1000 บาท
+link : https://media.digikey.com/pdf/Data%20Sheets/GroupGets%20PDFs/LoFive_R1_Web.pdf , https://www.digikey.co.th/en/products/detail/groupgets-llc/LOFIVE-R1/10186935 https://riscv.org/exchange/
+ความเร็ว : 320 MHz
+Temp Range (°C) :	-
+หน่วยความจำ (Memory) : RAM 16 KB
+port input/output : -
+Operating Voltage Range: 1.8 และ 3.3 V
