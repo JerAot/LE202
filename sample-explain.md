@@ -4,6 +4,19 @@
  1.2 void loop() : จะเป็นการวนซ้ำไปเรื่อยๆ โดยการเพิ่มค่า cnt ทีละ 1 แล้วให้ผลลัพธ์ที่ได้อยู่ในตัวแปร A โดยมีดีเลย์อยู่ที่ 0.3 sec  
 ### 2.ex02  
  2.1 void setup() : WiFi.mode(WIFI_STA) STA : โหมด station accession point เป็นการติดต่อระหว่าง board กับตัวปล่อยสัญญาณ(Router)  
- 2.2 void loop() : เริ่มต้นค้นหา Wifi ถ้า n = 0 : ไม่เจอ wifi , กรณี n ไม่เปน 0 , SSID (Service Set Identifier) : ชื่อเครือข่าย , RSSI(Received Signal Strength Indication) : ตัวบ่งชี้ความแรงของสัญญาณ , WiFi.encryptionType(i) --29 เป็นการบอกสถานะการเข้ารหัส wifi ถ้าเข้าได้ให้แสดงว่า " " ถ้าไม่ได้ให้แสดง "*"
+ 2.2 void loop() : เริ่มต้นค้นหา Wifi ถ้า n = 0 : ไม่เจอ wifi , กรณี n ไม่เปน 0 , SSID (Service Set Identifier) : ชื่อเครือข่าย , RSSI(Received Signal Strength Indication) : ตัวบ่งชี้ความแรงของสัญญาณ , WiFi.encryptionType(i) --29 เป็นการบอกสถานะการเข้ารหัส wifi ถ้าเข้าได้ให้แสดงว่า " " ถ้าไม่ได้ให้แสดง "
 #### 3.ex03
- 3.1
+ 3.1 void setup : ตั้งความเร็ว microcontroller ที่ 115200 bits/sec-ตั้ง port 0 เป็น output - 
+ 3.2 void loop : เป็นการวนลูปที่ให้ตัวแปร cnt + 1 ทุกครั้งที่วนลูป ถ้า cnt หารด้วย 2 ลงตัว ให้ port 0 > ON นอกจากนั้น port 0 > OFF , delay 0.5 sec
+ ##### 4.ex04
+ 4.1 บรรทัดที่ 5-6 จะเป็นการใส่ชื่อ AP(Access point)เช่นชื่อไอดี wifi,และใส่รหัสการเข้าถึง AP นั้นๆ , บรรทัดที่ 8 คือ port80 คือเชื่อมต่อกับ HTTP 
+ 4.2 setup : ตั้งค่า wifi เป็นโหมด station แล้วใส่ ID,password ของ Wifi, บรรทัดที่ 17 ถ้าเชื่อมต่อไม่ได้ให้ ดีเลย์ 0.5 sec ,ให้ print"." จากนั้นให้แสดงหมายเลข IP ของ board 
+             บรรทัดที่ 24-27 เป็นการบอกว้าถ้าไม่เจอ server ก็เป็นการแจ้งเตือนว่า path not found บรรทัดที่ 28-32 ถ้าเจอ server ก็เพิ่ม cnt ไป 1 แล้ว msg = msg + cnt >> แล้วให้ server ส่งคำว่า 200 กับค่า     ของmsg กลับมา บรรทัด 35-36 ถ้า server เริ่มต้นใช้งานได้แล้วให้ print "HTTP server started"
+  4.3 loop เป็น function ที่ทำงานกับหัวข้อ 4.2
+ ###### 5.ex05
+ 5.1 บรรทัดที่ 5-6 เป็น function สำหรับเชื่อม board กับ AP
+ 5.2 setup ทำการเชื่อมต่อ wifi โดยใส่ id,pass แล้ว print "Connecting ..." ถ้าเชื่อมต่อไม่ได้ให้ดีเลย์ 1 sec แล้วเพิ่มค่า i ไปเรื่อยๆแล้ววน while ลูป จนกว่าจะเชื่อมต่อได้ ,  
+ บรรทัดที่ 28 ถ้าเชื่อมต่อไม่ได้ ก็ส่งข้อความว่า 404 path not found , ถ้าเชื่อมต่อได้ ก็เพิ่ม cnt ทีละ 1 แล้วให้พิมพ์ 200 ตามด้วยค่าของ msg = msg + cnt
+ ####### 6.ex06
+ 6.1 setup : ปรับความเร็วแล้วตั้ง port 0/2 > Output
+ 6.2 loop : เพิ่ม cnt ทีละ 1 ถ้า cnt หารด้วย 2 ลงตัวให้ทำการ print "ON"และส่งค่า HIGH ไปที่ port 0,2 นอกจากนั้นเป็น OFF แล้วส่งค่า LOW ที่ port 0,2 โดย delay 0.5sec
