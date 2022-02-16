@@ -1,1 +1,15 @@
-
+# ออกแบบการทดลอง การทำงานของหน้าต่างอัตโนมัติต่อแสงแดด
+## 1.วัตถุประสงค์  
+  เพื่อเรียนรู้การทำงานของ sensor แสง และการทำงานของ Relay รวมถึงอาจนำไปประยุกต์ใช้ต่อระบบอัตโนมัติอื่นๆได้ให้ดียิ่งขึ้น
+### 2.อุปกรณ์ที่ใช้
+  2.1 หน้าต่างบานเล็ก หรือ วัสดุแผ่นบางๆ
+  2.2 Relay
+  2.3 sensor LDR
+  2.4 แหล่งจ่ายไฟฟ้า
+  2.5 ตัวต้านทาน
+  2.6 switch ไฟ
+### 3.ศึกษาข้อมูลเบื้องต้น  
+  3.1 รู้จักกับการทำงานของรีเลย์ https://misumitechnical.com/technical/electrical/relay-working-principles/#:~:text=%E0%B8%A3%E0%B8%B5%E0%B9%80%E0%B8%A5%E0%B8%A2%E0%B9%8C%E0%B8%88%E0%B8%B0%E0%B8%97%E0%B8%B3%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3,%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%95%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%86%E0%B8%84%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%A7%E0%B8%B4%E0%B8%95%E0%B8%8B%E0%B9%8C
+  3.2 รู้จักกับการทำงานของ sensor LDR https://www.gravitechthai.com/product-detail.php?WP=oGy3BHj1oH9axUF5nrO4Ljo7o3Qo7o3Q#:~:text=%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%95%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B2%E0%B8%99%E0%B8%8A%E0%B8%99%E0%B8%B4%E0%B8%94%E0%B9%84%E0%B8%A7%E0%B8%95%E0%B9%88%E0%B8%AD,%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%20switch%20%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%88%E0%B8%B1%E0%B8%9A
+#### 4.วิธีทำการทดลอง
+<img width="604" alt="GITHUB WINDOW" src="https://user-images.githubusercontent.com/98943405/154261591-cbafd9ba-8c14-4aa0-b83c-90119f1a3a6e.png">
