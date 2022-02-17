@@ -20,9 +20,17 @@
   IDE คือ Intregrated Developement Environment เป็นเครื่องมือ ที่ช่วยพัฒนาโปรแกรมโดยมีสิ่งอำนวยความสะดวกต่างๆไว้ให้ เช่น คำสั่ง compile , Run 
   
 # ESP01-สรุปวีดีโอ  
-*Digital : การเอาสัญญาณไฟฟ้ามาแทนด้วยตัวเลขซึ่งเรียกว่า Binary(0,1) โดยสรุปคือ ดูว่าสัญญาณเป็น ON/OFF ถ้ามีแรงดันไฟฟ้าก็แปลว่ามีสัญญาณ ON ไม่มีคือ OFF  
-*Voltage : แรงดันไฟฟ้า(Volt) มี 2 แบบ คือ แรงดันไฟฟ้ากระแสตรงและแบบสลับจะใช้เป็นไฟบ้าน
-*Computer : โดยเริ่มพัฒนามาจาก Supercomputer > Computer Desktop > Single Board Computer > Microcontroller ยิ่งพัฒนามากขึ้นยิ่งมีขนาดเล็กลง แต่ประสิทธิภาพกลับสูงขึ้น
-*Internet : มี 2 แบบ คือ แบบมีสาย/ไร้สาย ใช้เชื่อมโยงอุปกรณ์ด้วยกันให้สามารถรับ-ส่งข้อมูลซึ่งกันและกัน เช่น บลูทูธ ไวไฟ 3G,4G
+* Digital : การเอาสัญญาณไฟฟ้ามาแทนด้วยตัวเลขซึ่งเรียกว่า Binary(0,1) โดยสรุปคือ ดูว่าสัญญาณเป็น ON/OFF ถ้ามีแรงดันไฟฟ้าก็แปลว่ามีสัญญาณ ON ไม่มีคือ OFF  
+* Voltage : แรงดันไฟฟ้า(Volt) มี 2 แบบ คือ แรงดันไฟฟ้ากระแสตรงและแบบสลับจะใช้เป็นไฟบ้าน
+* Computer : โดยเริ่มพัฒนามาจาก Supercomputer > Computer Desktop > Single Board Computer > Microcontroller ยิ่งพัฒนามากขึ้นยิ่งมีขนาดเล็กลง แต่ประสิทธิภาพกลับสูงขึ้น
+* Internet : มี 2 แบบ คือ แบบมีสาย/ไร้สาย ใช้เชื่อมโยงอุปกรณ์ด้วยกันให้สามารถรับ-ส่งข้อมูลซึ่งกันและกัน เช่น บลูทูธ ไวไฟ 3G,4G
+* Program Language : เช่น ภาษา C,Python,Java สามารถเขียนลง microcontroller ได้
+* Platforomio : เป็น open source software เป็นการเขียนโปรแกรมในตัวเดียว แต่สามารถเขียนลง microcontroller ได้หลายแบบ เช่น arduino,Esp8266 Non-OS SDK รวมทั้งยังมีบอร์ดให้พัฒนาเป็นจำนวนมาก
 
-                
+# คลิปการทดลองบน ESP-01
+* 01run example1 : ตัว microcontroller ESP01 ประกอบด้วย CPU,เสาอากาศ wifi, USB ซึ่งเราจะทำการเขียนโค้ดลงไป คือ 01_serial-monitor มี2ส่วน คือ setup จะเป็นการตั้งค่า serialport ให้มีความเร็วตามที่กำหนด ส่วนที่ 2 คือ loop จะเป็นการเพิ่มและแสดงผลตัวแปร count และหน่วงเวลา 1000 ms = 1sec และยังมี platformio.ini(configuration file) เป็นตัวบอกรายละเอียดของ platform,board,framework,port ที่ดิดต่อและจากนั้นอัปโหลดใส่ ESP01 แล้วทำการพิมพ์ "pio device monitor" เพื่อดูผลลัพธ์
+* 02run example2 : รอบนี้ใช้คำสั่ง vi src/main.cpp เป็นการค้นหา wifi รอบตัว
+* 03run example3 : โดยตัว ESP01 จะมี input-output port คือ 0/1 และถ้าจำให้ port ใช้งานด้วยต้องต่อกับ adaptor แล้วเสียบกับ usb ในส่วนของโค้ดจะเป็นการสั่งให้ port0 เป็น output ถ้า cnt เป็นเลขคู่คือ ON ส่งค่า HIGH>port0 ถ้าคี่เป็น OFFส่งค่า LOW>port0 
+* 04 run example4 : ทดลองนำสัญญาณ input จากภายนอกเข้าสู่ microcontroller port 0(ขาว) = input , port2(เหลือง) = output ในส่วนของโค้ดจะดูที่ port0 ถ้าได้ 1 จะส่ง LOW>port2 ไฟจะดับ ถ้าอ่านได้  0 เป็น HIGH>port2 ไฟติด , การทดลองช่วงหลังจะเป็นการประยุกต์ใช้กับ sensor แสง ถ้ามีแสงสว่างมากระทบ sensor จะได้สัญญาณ 0 > LED มีไฟติด ถ้าไม่มีแสงมากระทบ จะได้สัญญาณ 1 > LED ไฟดับ
+* 05 run wifi : เป็นการสร้าง web server ผ่าน wifi ในส่วนของโค้ดจะเป็นการตั้งค่าการเชื่อมต่อกับ wifi คือใส่ ID , password
+* 06 run wifi AP : เป็นการใช้ wifi โดยสร้าง wifi ของตัวเองเพื่อเชื่อมต่อกับอุปกรณ์ที่ต้องการ โดยต้องตั้งชื่อ wifi , password , IP-ESP01 ,Gateway , subnet
